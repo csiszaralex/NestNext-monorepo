@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
-    'scope-enum': [2, 'always', ['backend', 'frontend', 'shared-types', 'repo']],
+    'scope-enum': [2, 'always', ['backend', 'frontend', 'shared-types', 'database', 'repo']],
     'scope-empty': [2, 'never'],
     'header-max-length': [2, 'always', 100],
     'subject-case': [2, 'never', ['sentence-case', 'start-case', 'pascal-case', 'upper-case']],

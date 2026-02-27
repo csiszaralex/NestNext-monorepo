@@ -3,8 +3,8 @@
   "display": "NestJS",
   "extends": "./base.json",
   "compilerOptions": {
-    "module": "esnext",
-    "moduleResolution": "bundler",
+    "module": "commonjs",
+    "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "ES2022",

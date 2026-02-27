@@ -50,6 +50,9 @@ importers:
       '@nestjs/swagger':
         specifier: ^11.2.6
         version: 11.2.6(@nestjs/common@11.1.13(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.13(@nestjs/common@11.1.13(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.13)(reflect-metadata@0.2.2)(rxjs@7.8.2))(reflect-metadata@0.2.2)
+      '@repo/database':
+        specifier: workspace:*
+        version: link:../../packages/database
       '@repo/shared-types':
         specifier: workspace:*
         version: link:../../packages/shared-types
@@ -207,20 +210,29 @@ importers:
         version: 7.4.1
       '@prisma/client':
         specifier: ^7.4.1
-        version: 7.4.1(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2))(typescript@5.9.2)
+        version: 7.4.1(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
       zod:
         specifier: ^4.3.6
         version: 4.3.6
     devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
       '@types/node':
         specifier: ^25.3.2
         version: 25.3.2
       prisma:
         specifier: ^7.4.1
-        version: 7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2)
+        version: 7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
       prisma-zod-generator:
         specifier: ^2.1.4
-        version: 2.1.4(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2))(typescript@5.9.2)(zod@4.3.6)
+        version: 2.1.4(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)(zod@4.3.6)
+      tsup:
+        specifier: ^8.0.0
+        version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3)
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
 
   packages/eslint-config:
     devDependencies:
@@ -7435,12 +7447,12 @@ snapshots:
 
   '@prisma/client-runtime-utils@7.4.1': {}
 
-  '@prisma/client@7.4.1(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2))(typescript@5.9.2)':
+  '@prisma/client@7.4.1(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)':
     dependencies:
       '@prisma/client-runtime-utils': 7.4.1
     optionalDependencies:
-      prisma: 7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2)
-      typescript: 5.9.2
+      prisma: 7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
+      typescript: 5.9.3
 
   '@prisma/config@7.4.1':
     dependencies:
@@ -7466,7 +7478,7 @@ snapshots:
 
   '@prisma/debug@7.4.2': {}
 
-  '@prisma/dev@0.20.0(typescript@5.9.2)':
+  '@prisma/dev@0.20.0(typescript@5.9.3)':
     dependencies:
       '@electric-sql/pglite': 0.3.15
       '@electric-sql/pglite-socket': 0.0.20(@electric-sql/pglite@0.3.15)
@@ -7483,7 +7495,7 @@ snapshots:
       proper-lockfile: 4.1.2
       remeda: 2.33.4
       std-env: 3.10.0
-      valibot: 1.2.0(typescript@5.9.2)
+      valibot: 1.2.0(typescript@5.9.3)
       zeptomatch: 2.1.0
     transitivePeerDependencies:
       - typescript
@@ -7548,7 +7560,7 @@ snapshots:
     dependencies:
       '@prisma/debug': 7.4.2
 
-  '@prisma/internals@7.4.2(typescript@5.9.2)':
+  '@prisma/internals@7.4.2(typescript@5.9.3)':
     dependencies:
       '@prisma/config': 7.4.2
       '@prisma/debug': 7.4.2
@@ -7565,7 +7577,7 @@ snapshots:
       arg: 5.0.2
       prompts: 2.4.2
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - magicast
 
@@ -10937,11 +10949,11 @@ snapshots:
     dependencies:
       parse-ms: 4.0.0
 
-  prisma-zod-generator@2.1.4(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2))(typescript@5.9.2)(zod@4.3.6):
+  prisma-zod-generator@2.1.4(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)(zod@4.3.6):
     dependencies:
-      '@prisma/client': 7.4.1(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2))(typescript@5.9.2)
+      '@prisma/client': 7.4.1(prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3))(typescript@5.9.3)
       '@prisma/generator-helper': 7.4.2
-      '@prisma/internals': 7.4.2(typescript@5.9.2)
+      '@prisma/internals': 7.4.2(typescript@5.9.3)
       '@types/cors': 2.8.19
       '@types/express': 5.0.6
       ajv: 8.18.0
@@ -10960,16 +10972,16 @@ snapshots:
       - supports-color
       - typescript
 
-  prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.2):
+  prisma@7.4.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3):
     dependencies:
       '@prisma/config': 7.4.1
-      '@prisma/dev': 0.20.0(typescript@5.9.2)
+      '@prisma/dev': 0.20.0(typescript@5.9.3)
       '@prisma/engines': 7.4.1
       '@prisma/studio-core': 0.13.1(@types/react@19.2.2)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       mysql2: 3.15.3
       postgres: 3.4.7
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
     transitivePeerDependencies:
       - '@types/react'
       - magicast
@@ -11783,6 +11795,34 @@ snapshots:
       - tsx
       - yaml
 
+  tsup@8.5.1(jiti@2.6.1)(postcss@8.5.6)(typescript@5.9.3):
+    dependencies:
+      bundle-require: 5.1.0(esbuild@0.27.3)
+      cac: 6.7.14
+      chokidar: 4.0.3
+      consola: 3.4.2
+      debug: 4.4.3
+      esbuild: 0.27.3
+      fix-dts-default-cjs-exports: 1.0.1
+      joycon: 3.1.1
+      picocolors: 1.1.1
+      postcss-load-config: 6.0.1(jiti@2.6.1)(postcss@8.5.6)
+      resolve-from: 5.0.0
+      rollup: 4.59.0
+      source-map: 0.7.6
+      sucrase: 3.35.1
+      tinyexec: 0.3.2
+      tinyglobby: 0.2.15
+      tree-kill: 1.2.2
+    optionalDependencies:
+      postcss: 8.5.6
+      typescript: 5.9.3
+    transitivePeerDependencies:
+      - jiti
+      - supports-color
+      - tsx
+      - yaml
+
   turbo-darwin-64@2.8.9:
     optional: true
 
@@ -11967,9 +12007,9 @@ snapshots:
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
 
-  valibot@1.2.0(typescript@5.9.2):
+  valibot@1.2.0(typescript@5.9.3):
     optionalDependencies:
-      typescript: 5.9.2
+      typescript: 5.9.3
 
   validate-npm-package-name@7.0.2: {}
 
