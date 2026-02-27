@@ -1,1 +1,1 @@
-export * from './generated/zod/schemas';
+export * from '@repo/database';
