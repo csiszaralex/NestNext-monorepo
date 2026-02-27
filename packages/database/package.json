@@ -1,0 +1,17 @@
+{
+  "name": "@repo/database",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:generate": "prisma generate"
+  },
+  "devDependencies": {
+    "prisma": "^7.4.1"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.4.1",
+    "@prisma/client": "^7.4.1",
+    "prisma-zod-generator": "^2.1.4"
+  }
+}
