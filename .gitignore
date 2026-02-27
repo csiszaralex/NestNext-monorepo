@@ -40,5 +40,5 @@ yarn-error.log*
 # NextJs
 next-env.d.ts
 
-# Prisma
-**/generated/prisma
+# Generated files
+**/generated/**
