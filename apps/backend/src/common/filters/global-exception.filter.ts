@@ -45,23 +45,29 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       const meta = exception.meta || {};
 
       switch (code) {
-        case 'P2025': // Record not found
+        case 'P2025': {
+          // Record not found
           status = HttpStatus.NOT_FOUND;
           errorCode = 'RESOURCE_NOT_FOUND';
           message = 'A kért erőforrás nem található vagy már törölték.';
           break;
-        case 'P2002': // Unique constraint failed
+        }
+        case 'P2002': {
+          // Unique constraint failed
           status = HttpStatus.CONFLICT;
           errorCode = 'UNIQUE_CONSTRAINT_FAILED';
           const target = meta.target ? ` (${meta.target})` : '';
           message = `Egyedi azonosító ütközés: a megadott adat már létezik${target}.`;
           break;
-        case 'P2003': // Foreign key constraint failed
+        }
+        case 'P2003': {
+          // Foreign key constraint failed
           status = HttpStatus.BAD_REQUEST;
           errorCode = 'FOREIGN_KEY_CONSTRAINT_FAILED';
           message = 'Hivatkozási hiba: a kapcsolódó erőforrás nem létezik.';
           break;
-        default:
+        }
+        default: {
           // Egyéb Prisma hiba (pl. P1001 DB down) marad 500-as, de logoljuk!
           status = HttpStatus.INTERNAL_SERVER_ERROR;
           errorCode = `DATABASE_ERROR_${code}`;
@@ -70,6 +76,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
             `[Prisma ${code}] ${request.method} ${request.url} - ${exception.message}`,
             exception.stack,
           );
+        }
       }
     } else if (exception instanceof Error) {
       this.logger.error(
