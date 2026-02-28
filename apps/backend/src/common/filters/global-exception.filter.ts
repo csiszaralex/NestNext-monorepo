@@ -30,7 +30,10 @@ export class GlobalExceptionFilter implements ExceptionFilter {
       const zodError = exception.getZodError() as ZodError;
       status = HttpStatus.BAD_REQUEST;
       errorCode = 'VALIDATION_ERROR';
-      message = zodError.issues.map((i) => `${i.path.join('.')}: ${i.message}`);
+      message = zodError.issues.map((i) => {
+        const path = i.path.length > 0 ? `${i.path.join('.')}: ` : '';
+        return `${path}${i.message}`;
+      });
     } else if (exception instanceof HttpException) {
       status = exception.getStatus();
       const responseBody = exception.getResponse() as any;
