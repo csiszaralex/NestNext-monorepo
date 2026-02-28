@@ -1,3 +1,12 @@
-import { nestConfig } from '@axiom/eslint-config/nest';
+import nestConfig from '@repo/eslint-config/nest.js';
 
-export default nestConfig(import.meta.dirname);
+export default [
+  ...nestConfig(import.meta.dirname),
+  {
+    languageOptions: {
+      parserOptions: {
+        allowDefaultProject: ['*.ts', '**/*.ts'],
+      },
+    },
+  },
+];

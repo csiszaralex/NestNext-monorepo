@@ -1,7 +1,7 @@
 import globals from 'globals';
-import { config as baseConfig } from './base.js';
+import baseConfig from './base.js';
 
-export const nestConfig = (projectDir) => [
+export default (projectDir) => [
   ...baseConfig,
   {
     languageOptions: {
@@ -24,8 +24,5 @@ export const nestConfig = (projectDir) => [
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'prettier/prettier': ['warn', { endOfLine: 'auto' }],
     },
-  },
-  {
-    ignores: ['eslint.config.mjs', 'dist/**'],
   },
 ];

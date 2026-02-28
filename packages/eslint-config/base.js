@@ -1,12 +1,12 @@
 import js from '@eslint/js';
 import onlyWarn from 'eslint-plugin-only-warn';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import turboPlugin from 'eslint-plugin-turbo';
 import tseslint from 'typescript-eslint';
 
-export const config = [
+export default [
   js.configs.recommended,
-  eslintPluginPrettier.configs.recommended,
+  eslintPluginPrettierRecommended,
   ...tseslint.configs.recommended,
   {
     plugins: {
@@ -24,6 +24,6 @@ export const config = [
     },
   },
   {
-    ignores: ['dist/**', 'node_modules/**', 'coverage/**'],
+    ignores: ['eslint.config.mjs', 'dist/**', 'node_modules/**', 'coverage/**'],
   },
 ];

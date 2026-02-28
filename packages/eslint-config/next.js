@@ -1,13 +1,12 @@
 import pluginNext from '@next/eslint-plugin-next';
 import pluginReact from 'eslint-plugin-react';
 import pluginReactHooks from 'eslint-plugin-react-hooks';
-import { globalIgnores } from 'eslint/config';
 import globals from 'globals';
-import { config as baseConfig } from './base.js';
+import baseConfig from './base.js';
 
-export const nextJsConfig = [
+export default [
   ...baseConfig,
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'next-env.d.ts']),
+  { ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'] },
   {
     ...pluginReact.configs.flat.recommended,
     languageOptions: {
