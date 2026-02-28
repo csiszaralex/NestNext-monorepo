@@ -15,6 +15,6 @@ export class AppConfigService {
   }
 
   get port(): number {
-    return this.get('PORT');
+    return this.get('BACKEND_PORT');
   }
 }

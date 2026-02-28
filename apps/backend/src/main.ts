@@ -12,7 +12,6 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule, { bufferLogs: true });
 
   const configService = app.get(AppConfigService);
-  const port = configService.get('BACKEND_PORT');
   app.useLogger(app.get(Logger));
   app.setGlobalPrefix('api');
 
@@ -33,7 +32,7 @@ async function bootstrap() {
   if (configService.get('SWAGGER_ENABLED')) setupSwagger(app);
 
   app.enableShutdownHooks();
-  await app.listen(port);
+  await app.listen(configService.port);
 }
 
 function setupSwagger(app: INestApplication) {
