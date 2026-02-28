@@ -1,6 +1,6 @@
 {
   "name": "@repo/shared-types",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "main": "./dist/index.cjs",
@@ -21,7 +21,8 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
     "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
-    "lint": "eslint \"src/**/*.ts*\""
+    "lint": "eslint \"src/**/*.ts*\"",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@repo/database": "workspace:*",
@@ -30,7 +31,8 @@
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.18.0",
     "tsup": "^8.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "5.9.2"
   }
 }

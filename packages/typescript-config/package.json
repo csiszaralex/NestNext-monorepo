@@ -6,9 +6,5 @@
     "./base.json": "./base.json",
     "./nest.json": "./nest.json",
     "./nextjs.json": "./nextjs.json"
-  },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
   }
 }

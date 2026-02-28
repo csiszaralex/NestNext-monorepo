@@ -1,6 +1,6 @@
 {
   "name": "@repo/database",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "main": "./dist/index.cjs",
@@ -21,7 +21,9 @@
   "scripts": {
     "db:generate": "prisma generate",
     "build": "tsup src/index.ts --format cjs,esm --dts --clean",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "lint": "eslint \"src/**/*.ts*\"",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.4.1",
@@ -33,7 +35,9 @@
     "prisma": "^7.4.1",
     "prisma-zod-generator": "^2.1.4",
     "tsup": "^8.0.0",
-    "typescript": "^5.9.3",
-    "@repo/typescript-config": "workspace:*"
+    "typescript": "5.9.2",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "^9.18.0",
+    "@repo/eslint-config": "workspace:*"
   }
 }
