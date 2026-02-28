@@ -11,7 +11,15 @@ import { GlobalExceptionFilter } from './common/filters/global-exception.filter'
 
 @Module({
   imports: [
-    ThrottlerModule.forRoot([{ ttl: 60000, limit: 100 }]),
+    ThrottlerModule.forRootAsync({
+      inject: [AppConfigService],
+      useFactory: async (config: AppConfigService) => [
+        {
+          ttl: config.get('THROTTLE_TTL'),
+          limit: config.get('THROTTLE_LIMIT'),
+        },
+      ],
+    }),
     LoggerModule.forRootAsync({
       inject: [AppConfigService],
       useFactory: async (config: AppConfigService) => getLoggerConfig(config),
