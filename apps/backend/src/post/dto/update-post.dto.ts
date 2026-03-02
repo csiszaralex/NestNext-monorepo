@@ -1,4 +1,4 @@
-import { PostUpdateInputObjectSchema } from '@repo/shared-types';
+import { UpdatePostApiSchema } from '@repo/shared-types';
 import { createZodDto } from 'nestjs-zod';
 
-export class UpdatePostDto extends createZodDto(PostUpdateInputObjectSchema) {}
+export class UpdatePostDto extends createZodDto(UpdatePostApiSchema) {}
